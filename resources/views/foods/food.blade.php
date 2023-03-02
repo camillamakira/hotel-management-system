@@ -1,13 +1,24 @@
 @extends('layouts.master')
 
+@section('title', 'Foods')
+
 @section('content')
 
-<!DOCTYPE html>
-<html lang="en">
-<body>
 <div class="container mt-2">
 <div class="row">
 <div class="col-lg-12 margin-tb">
+<div class="float-left">
+    <ol class="breadcrumb float-sm-right">
+      @if (Auth::user()->role == 'admin')
+      <li class="breadcrumb-item"><a href="{{url('admin_dashboard')}}">Home</a></li>
+      @elseif(Auth::user()->role == 'manager')
+      <li class="breadcrumb-item"><a href="{{url('manager_dashboard')}}">Home</a></li> 
+      @else
+      <li class="breadcrumb-item"><a href="{{url('user_dashboard')}}">Home</a></li> 
+      @endif
+      <li class="breadcrumb-item active">@yield('title')</li>
+    </ol>
+</div>
 <div class="float-right mb-2">
 <a class="btn btn-success" onClick="add()" href="javascript:void(0)"> Create Food</a>
 </div>
@@ -66,7 +77,6 @@
 </div>
 </div>
 <!-- end bootstrap model -->
-</body>
 <script type="text/javascript">
 $(document).ready( function () {
 $.ajaxSetup({
@@ -136,7 +146,7 @@ cache:false,
 contentType: false,
 processData: false,
 success: (data) => {
-$("#company-modal").modal('hide');
+$("#food-modal").modal('hide');
 var oTable = $('#food-datatable').dataTable();
 oTable.fnDraw(false);
 $("#btn-save").html('Submit');
@@ -148,5 +158,4 @@ console.log(data);
 });
 });
 </script>
-</html>
 @endsection
