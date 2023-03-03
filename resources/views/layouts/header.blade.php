@@ -32,7 +32,7 @@
                     <div class="col-lg-2">
                         <div class="logo">
                             <a href="./index.html">
-                                <img src="img/logo.png" alt="">
+                                <img src="img/golf.png" alt="">
                             </a>
                         </div>
                     </div>
