@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FoodController;
+use App\Http\Controllers\PagesController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,7 +16,7 @@ use App\Http\Controllers\FoodController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('index');
 });
 
 Auth::routes();
@@ -30,3 +32,8 @@ Route::get('food-datatable', [FoodController::class, 'index']);
 Route::post('store-food', [FoodController::class, 'store']);
 Route::post('edit-food', [FoodController::class, 'edit']);
 Route::post('delete-food', [FoodController::class, 'destroy']);
+
+Route::get('about', [PagesController::class, 'about']);
+Route::get('rooms', [PagesController::class, 'rooms']);
+Route::get('foods', [PagesController::class, 'foods']);
+Route::get('recreation', [PagesController::class, 'recreation']);
