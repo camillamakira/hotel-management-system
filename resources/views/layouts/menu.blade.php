@@ -3,66 +3,95 @@
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
           <li class="nav-item">
+            @if (Auth::user()->role == 'admin')
             <a href="{{url('admin_dashboard')}}" class="nav-link">
+            @elseif (Auth::user()->role == 'manager') 
+            <a href="{{url('manager_dashboard')}}" class="nav-link">
+            @else
+            <a href="{{url('user_dashboard')}}" class="nav-link">             
+            @endif
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
                 Dashboard
               </p>
             </a>
           </li>
-          <li class="nav-item">
-            <a href="{{url('food-datatable')}}" class="nav-link">
-              <i class="nav-icon fas fa-th"></i>
-              <p>
-                Foods
-              </p>
-            </a>
-          </li>
-          <li class="nav-item">
+          @can('isAdmin')
+          <li class="nav-item menu">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-th"></i>
               <p>
-                Food Orders
+                Foods
+                <i class="right fas fa-angle-left"></i>
               </p>
             </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Foods</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Food Orders</p>
+                </a>
+              </li>
+            </ul>
           </li>
-          <li class="nav-item">
+          <li class="nav-item menu">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-building"></i>
               <p>
                 Accommodation
+                <i class="right fas fa-angle-left"></i>
               </p>
             </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Rooms</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Room Orders</p>
+                </a>
+              </li>
+            </ul>
           </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-building"></i>
-              <p>
-                Accomodation Orders
-              </p>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-th"></i>
-              <p>
-                Recreation
-              </p>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-th"></i>
-              <p>
-                Recreation Orders
-              </p>
-            </a>
-          </li>
-          <li class="nav-item menu-open">
+
+          <li class="nav-item menu">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-users"></i>
               <p>
-                Manage users
+                Recreation Facilities
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Facilities</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Facility Orders</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item menu">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-users"></i>
+              <p>
+                Manage Users
                 <i class="right fas fa-angle-left"></i>
               </p>
             </a>
@@ -74,6 +103,103 @@
                 </a>
               </li>
             </ul>
+          </li>            
+          @endcan
+
+          @can('isManager')
+          <li class="nav-item menu">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-th"></i>
+              <p>
+                Foods
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Foods</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Food Orders</p>
+                </a>
+              </li>
+            </ul>
           </li>
+          <li class="nav-item menu">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-building"></i>
+              <p>
+                Accommodation
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Rooms</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Room Orders</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+
+          <li class="nav-item menu">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-users"></i>
+              <p>
+                Recreation Facilities
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Facilities</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Facility Orders</p>
+                </a>
+              </li>
+            </ul>
+          </li>            
+          @endcan
+
+          @can('isUser')
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="fas fa-th nav-icon"></i>
+              <p>My Food Orders</p>
+            </a>
+          </li>  
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="fas fa-th nav-icon"></i>
+              <p>My Room Orders</p>
+            </a>
+          </li> 
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="fas fa-th nav-icon"></i>
+              <p>My Recreation Orders</p>
+            </a>
+          </li>         
+          @endcan
+
+
         </ul>
       </nav>
