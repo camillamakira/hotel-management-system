@@ -50,7 +50,7 @@
                             <div class="nav-right">
                             @if (Route::has('login'))
                             @auth
-                            <a href="{{url('/home')}}">Home</a>
+                            <a href="{{url('/home')}}">Account</a>
                             @else
                                 <a href="{{route('login')}}">Login</a>
                             @endauth

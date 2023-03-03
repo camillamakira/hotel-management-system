@@ -1,8 +1,7 @@
 @extends('layouts.master')
 
 @section('content')
-<section class="content">
-      <div class="container-fluid">
+      <div class="container-fluid mt-2">
         <!-- Info boxes -->
         <div class="row">
           <div class="col-12 col-sm-6 col-md-3">
@@ -121,9 +120,9 @@
             </div>
             <!-- /.card -->
           <!-- /.col -->
-</div>
+        </div>
         </div>
         <!-- /.row -->
-      </div><!--/. container-fluid -->
-    </section>
+      </div>
+      <!--/. container-fluid -->
 @endsection
