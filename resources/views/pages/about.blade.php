@@ -28,10 +28,10 @@
                 <div class="row">
                     <div class="col-lg-6">
                         <div class="ap-title">
-                            <h2>Welcome To {{config('app.name')}}.</h2>
-                            <p>Built in 1910 during the Belle Epoque period, this hotel is located in the center of
-                                Paris, with easy access to the city’s tourist attractions. It offers tastefully
-                                decorated rooms.</p>
+                            @foreach ($abouts as $about)
+                            <h2>{{$about->title}}</h2>
+                            <p>{{$about->history}}
+                            @endforeach
                         </div>
                     </div>
                     <div class="col-lg-5 offset-lg-1">

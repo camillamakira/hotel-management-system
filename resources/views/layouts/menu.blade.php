@@ -19,7 +19,7 @@
           @can('isAdmin')
           <li class="nav-item menu">
             <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-th"></i>
+              <i class="nav-icon fas fa-cogs"></i>
               <p>
                 Configurations
                 <i class="right fas fa-angle-left"></i>

@@ -5,12 +5,14 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Food;
 use App\Models\Room;
+use App\Models\About;
 use App\Models\Recreation;
 
 class PagesController extends Controller
 {
     public function about(){
-        return view('pages.about');                 
+        $abouts = About::all();
+        return view('pages.about',compact('abouts'));                 
     }
     public function rooms(){
         $rooms =Room::paginate(6);

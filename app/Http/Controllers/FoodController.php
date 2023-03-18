@@ -31,7 +31,10 @@ class FoodController extends Controller
  
         $validatedData = $request->validate([
             'images' => 'required',
-            'images.*' => 'mimes:jpg,png,jpeg,gif,svg'
+            'images.*' => 'mimes:jpg,png,jpeg,gif,svg',
+            'name'=> 'required|regex:/^[\pL\s\-]+$/u|max:50',
+            'price' => "required|regex:/^\d+(\.\d{1,2})?$/",
+            'size'=> 'required|regex:/^[\pL\s\-]+$/u|max:50',
             ]);
     
             if($request->TotalImages > 0)

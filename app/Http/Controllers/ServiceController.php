@@ -12,7 +12,7 @@ class ServiceController extends Controller
     {
         if(request()->ajax()) {
             return datatables()->of(Service::select('*'))
-            ->addColumn('action', 'servises.service-action')
+            ->addColumn('action', 'services.service-action')
             ->rawColumns(['action'])
             ->addIndexColumn()
             ->make(true);

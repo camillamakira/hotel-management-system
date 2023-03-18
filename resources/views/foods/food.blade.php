@@ -52,41 +52,43 @@
 </div>
 <div class="modal-body">
 <form action="javascript:void(0)" id="FoodForm" name="FoodForm" class="form-horizontal" method="POST" enctype="multipart/form-data">
+<div class="errorMsgntainer"></div>   
 <input type="hidden" name="id" id="id">
 <div class="form-group">
 <label for="name" class="col-sm-2 control-label">Name</label>
 <div class="col-sm-12">
-<input type="text" class="form-control" id="name" name="name" placeholder="Enter Name" maxlength="50" required="">
+<input type="text" class="form-control" id="name" name="name" placeholder="Enter Name" maxlength="50" >
 </div>
 </div>  
 <div class="form-group">
 <label class="col-sm-2 control-label">Price</label>
 <div class="col-sm-12">
-<input type="text" class="form-control" id="price" name="price" placeholder="Enter Price (Per Plate)" required="">
+<input type="text" class="form-control" id="price" name="price" placeholder="Enter Price (Per Plate)" >
 </div>
 </div>
 <div class="form-group">
 <label class="col-sm-2 control-label">Size</label>
 <div class="col-sm-12">
-<input type="text" class="form-control" id="size" name="size" placeholder="Enter Size e.g Small Size" required="">
+<input type="text" class="form-control" id="size" name="size" placeholder="Enter Size e.g Small Size" >
 </div>
 </div>
 <div class="form-group">
 <label for="name" class="col-sm-2 control-label">Quantity</label>
 <div class="col-sm-12">
-<input type="number" class="form-control" id="quantity" name="quantity" placeholder="Enter Quantity" min="1" max="1000000" required="">
+<input type="number" class="form-control" id="quantity" name="quantity" placeholder="Enter Quantity" min="1" max="1000000" >
 </div>
 </div>
 <div class="form-group">
 <label class="col-sm-2 control-label">Services</label>
 <div class="col-sm-12">
-<input type="text" class="form-control" id="services" name="services" placeholder="Enter Services e.g Seasoning,Chilli... etc" required="">
+<input type="text" class="form-control" id="services" name="services" placeholder="Enter Services e.g Seasoning,Chilli... etc" >
 </div>
 </div>
 <div class="form-group">
 <label class="col-sm-2 control-label">Description</label>
 <div class="col-sm-12">
-<input type="textarea" class="form-control" id="description" name="description" placeholder="Enter Description" required="">
+<textarea class="form-control" id="description" name="description" placeholder="Enter Description" rows="3" >
+</textarea>
 </div>
 </div>
 <div class="col-md-12">
@@ -217,6 +219,10 @@ alert('Food has been created successfully');
 },
 error: function(data){
 console.log(data);
+let error = data.responseJSON;
+$.each(error.errors, function (index, value) {
+    $('.errorMsgntainer').append('<span class="text-danger">'+value+'<span>'+'<br>');
+});
 }
 });
 });

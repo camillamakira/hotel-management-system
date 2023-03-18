@@ -3,7 +3,6 @@
 @section('title', 'About Us')
 
 @section('content')
-
 <div class="container mt-2">
 <div class="row">
 <div class="col-lg-12 margin-tb">
@@ -20,7 +19,7 @@
     </ol>
 </div>
 <div class="float-right mb-2">
-<a class="btn btn-success" onClick="add()" href="javascript:void(0)"> Create About</a>
+<!-- <a class="btn btn-success" onClick="add()" href="javascript:void(0)"> Create About</a> -->
 </div>
 </div>
 </div>
@@ -34,7 +33,7 @@
 <thead>
 <tr>
 <th>Id</th>
-<th>Title</th>
+<th>Name</th>
 <th>History</th>
 <th>Action</th>
 </tr>
@@ -53,18 +52,18 @@
 <form action="javascript:void(0)" id="AboutForm" name="AboutForm" class="form-horizontal" method="POST" enctype="multipart/form-data">
 <input type="hidden" name="id" id="id">
 <div class="form-group">
-<label for="name" class="col-sm-2 control-label">Title</label>
+<label for="name" class="col-sm-6 control-label"> Title</label>
 <div class="col-sm-12">
 <input type="text" class="form-control" id="title" name="title" placeholder="Enter Title" maxlength="50" required="">
 </div>
-</div>  
+</div> 
 <div class="form-group">
-<label class="col-sm-2 control-label">History</label>
+<label for="name" class="col-sm-6 control-label"> History</label>
 <div class="col-sm-12">
-<textarea class="form-control" id="history" name="history" placeholder="Enter History" rows="3" required="">
+<textarea class="form-control" id="history" name="history" placeholder="Enter History"  rows="3" required="">
 </textarea>
 </div>
-</div>
+</div> 
 <div class="col-sm-offset-2 col-sm-10">
 <button type="submit" class="btn btn-primary" id="btn-save">Save changes
 </button>
@@ -83,24 +82,6 @@ $.ajaxSetup({
 headers: {
 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
 }
-});
-$(function() {
-// Multiple images preview with JavaScript
-var ShowMultipleImagePreview = function(input, imgPreviewPlaceholder) {
-if (input.files) {
-var filesAmount = input.files.length;
-for (i = 0; i < filesAmount; i++) {
-var reader = new FileReader();
-reader.onload = function(event) {
-$($.parseHTML('<img>')).attr('src', event.target.result).appendTo(imgPreviewPlaceholder);
-}
-reader.readAsDataURL(input.files[i]);
-}
-}
-};
-$('#images').on('change', function() {
-ShowMultipleImagePreview(this, 'div.show-multiple-image-preview');
-});
 });
 $('#about-datatable').DataTable({
 processing: true,
@@ -132,7 +113,7 @@ $('#AboutModal').html("Edit About");
 $('#about-modal').modal('show');
 $('#id').val(res.id);
 $('#title').val(res.title);
-$('#description').val(res.description);
+$('#history').val(res.history);
 }
 });
 }  
@@ -155,12 +136,6 @@ oTable.fnDraw(false);
 $('#AboutForm').submit(function(e) {
 e.preventDefault();
 var formData = new FormData(this);
-let TotalImages = $('#images')[0].files.length; //Total Images
-let images = $('#images')[0];
-for (let i = 0; i < TotalImages; i++) {
-formData.append('images' + i, images.files[i]);
-}
-formData.append('TotalImages', TotalImages);
 $.ajax({
 type:'POST',
 url: "{{ url('store-about')}}",
@@ -170,11 +145,10 @@ contentType: false,
 processData: false,
 success: (data) => {
 $("#about-modal").modal('hide');
-var oTable = $('about-datatable').dataTable();
+var oTable = $('#about-datatable').dataTable();
 oTable.fnDraw(false);
 $("#btn-save").html('Submit');
 $("#btn-save"). attr("disabled", false);
-alert('About has been created successfully');
 },
 error: function(data){
 console.log(data);
