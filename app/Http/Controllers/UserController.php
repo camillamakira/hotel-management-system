@@ -32,8 +32,13 @@ class UserController extends Controller
  
         $validatedData = $request->validate([
             'images' => 'required',
-            'images.*' => 'mimes:jpg,png,jpeg,gif,svg'
-            ]);
+            'images.*' => 'mimes:jpg,png,jpeg,gif,svg',
+            'first_name'=> 'required|regex:/^[\pL\s\-]+$/u|max:50',
+            'last_name'=> 'required|regex:/^[\pL\s\-]+$/u|max:50',
+            'email'=> 'required|email|unique:users',
+            'role' => 'required',
+            'phone_no' => 'required|regex:/^([0-9\s\-\+\(\)]*)$/|min:10',
+        ]);
     
             if($request->TotalImages > 0)
             {

@@ -52,7 +52,7 @@
                                     </tr>
                                 </tbody>
                             </table>
-                            <a href="#" class="primary-btn">More Details</a>
+                            <a href="{{url('singleroom/'.$room->id)}}" class="primary-btn">More Details</a>
                         </div>
                     </div>
                 </div>                    

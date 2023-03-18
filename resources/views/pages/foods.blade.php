@@ -48,7 +48,7 @@
                                     </tr>
                                 </tbody>
                             </table>
-                            <a href="#" class="primary-btn">More Details</a>
+                            <a href="{{url('singlefood/'.$food->id)}}" class="primary-btn">More Details</a>
                         </div>
                     </div>
                 </div>

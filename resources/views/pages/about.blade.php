@@ -36,11 +36,9 @@
                     </div>
                     <div class="col-lg-5 offset-lg-1">
                         <ul class="ap-services">
-                            <li><i class="icon_check"></i> 20% Off On Accommodation.</li>
-                            <li><i class="icon_check"></i> Complimentary Daily Breakfast</li>
-                            <li><i class="icon_check"></i> 3 Pcs Laundry Per Day</li>
-                            <li><i class="icon_check"></i> Free Wifi.</li>
-                            <li><i class="icon_check"></i> Discount 20% On F&B</li>
+                            @foreach ($services as $service)
+                            <li><i class="icon_check"></i> {{$service->title}}</li>                                
+                            @endforeach
                         </ul>
                     </div>
                 </div>

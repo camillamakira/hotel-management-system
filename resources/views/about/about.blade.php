@@ -50,6 +50,7 @@
 </div>
 <div class="modal-body">
 <form action="javascript:void(0)" id="AboutForm" name="AboutForm" class="form-horizontal" method="POST" enctype="multipart/form-data">
+<div class="errorMsgntainer"></div>   
 <input type="hidden" name="id" id="id">
 <div class="form-group">
 <label for="name" class="col-sm-6 control-label"> Title</label>
@@ -151,6 +152,10 @@ $("#btn-save").html('Submit');
 $("#btn-save"). attr("disabled", false);
 },
 error: function(data){
+let error = data.responseJSON;
+$.each(error.errors, function (index, value) {
+    $('.errorMsgntainer').append('<span class="text-danger">'+value+'<span>'+'<br>');
+});
 console.log(data);
 }
 });

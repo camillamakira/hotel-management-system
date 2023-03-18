@@ -28,6 +28,9 @@ Route::get('about', [PagesController::class, 'about']);
 Route::get('rooms', [PagesController::class, 'rooms']);
 Route::get('foods', [PagesController::class, 'foods']);
 Route::get('recreation', [PagesController::class, 'recreation']);
+Route::get('singleroom/{id}', [PagesController::class, 'singleRoom']);
+Route::get('singlefood/{id}', [PagesController::class, 'singleFood']);
+Route::get('singlerecreation/{id}', [PagesController::class, 'singleRecreation']);
 
 Auth::routes();
 

@@ -31,7 +31,14 @@ class RoomController extends Controller
  
         $validatedData = $request->validate([
             'images' => 'required',
-            'images.*' => 'mimes:jpg,png,jpeg,gif,svg'
+            'images.*' => 'mimes:jpg,png,jpeg,gif,svg',
+            'name'=> 'required|regex:/^[\pL\s\-]+$/u|max:50',
+            'price' => "required|regex:/^\d+(\.\d{1,2})?$/",
+            'size'=> 'required|string|max:50',
+            'bed'=> 'required|string|max:50',
+            'capacity' => 'required',
+            'services'=> 'required|string|max:150',
+            'description'=> 'required|string',
             ]);
     
             if($request->TotalImages > 0)

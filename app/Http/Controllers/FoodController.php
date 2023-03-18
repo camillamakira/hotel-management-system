@@ -35,6 +35,9 @@ class FoodController extends Controller
             'name'=> 'required|regex:/^[\pL\s\-]+$/u|max:50',
             'price' => "required|regex:/^\d+(\.\d{1,2})?$/",
             'size'=> 'required|regex:/^[\pL\s\-]+$/u|max:50',
+            'quantity' => 'required',
+            'services'=> 'required|regex:/^[\pL\s\-]+$/u|max:150',
+            'description'=> 'required|regex:/^[\pL\s\-]+$/u|max:1050',
             ]);
     
             if($request->TotalImages > 0)

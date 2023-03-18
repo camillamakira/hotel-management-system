@@ -30,6 +30,11 @@ class ServiceController extends Controller
     public function store(Request $request)
     {  
     
+        $validatedData = $request->validate([
+            'title'=> 'required|string|max:50',
+            'description'=> 'required|string|max:1050',
+            ]);
+
                 $serviceId = $request->id;
         
                 $service   =   Service::updateOrCreate(

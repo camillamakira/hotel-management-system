@@ -53,6 +53,7 @@
 </div>
 <div class="modal-body">
 <form action="javascript:void(0)" id="UserForm" name="UserForm" class="form-horizontal" method="POST" enctype="multipart/form-data">
+<div class="errorMsgntainer"></div>   
 <input type="hidden" name="id" id="id">
 <div class="form-group">
 <label for="name" class="col-sm-2 control-label">First Name</label>
@@ -76,16 +77,16 @@
 <label class="col-sm-2 control-label">Role</label>
 <div class="col-sm-12">
      <select name="role" id="role" class="form-control" maxlength="50" required="">
-        <option value="admin">Administrator</option>
-        <option value="manager">Manager</option>
         <option value="user">User</option>
+        <option value="manager">Manager</option>
+        <option value="admin">Administrator</option>
       </select>
 </div>
 </div>
 <div class="form-group">
 <label for="name" class="col-sm-2 control-label">Phone Number</label>
 <div class="col-sm-12">
-<input type="text" class="form-control" id="phone_no" name="phone_no" placeholder="Format 07XXXXXXXXX(optional)"maxlength="10" >
+<input type="text" class="form-control" id="phone_no" name="phone_no" placeholder="Format 07XXXXXXXXX"maxlength="10" >
 </div>
 </div> 
 <div class="col-md-12">
@@ -215,6 +216,10 @@ $("#btn-save"). attr("disabled", false);
 alert('User has been created successfully');
 },
 error: function(data){
+  let error = data.responseJSON;
+$.each(error.errors, function (index, value) {
+    $('.errorMsgntainer').append('<span class="text-danger">'+value+'<span>'+'<br>');
+});
 console.log(data);
 }
 });

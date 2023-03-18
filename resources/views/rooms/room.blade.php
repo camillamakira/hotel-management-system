@@ -53,6 +53,7 @@
 </div>
 <div class="modal-body">
 <form action="javascript:void(0)" id="RoomForm" name="RoomForm" class="form-horizontal" method="POST" enctype="multipart/form-data">
+<div class="errorMsgntainer"></div>   
 <input type="hidden" name="id" id="id">
 <div class="form-group">
 <label for="name" class="col-sm-2 control-label">Name</label>
@@ -93,7 +94,8 @@
 <div class="form-group">
 <label class="col-sm-2 control-label">Description</label>
 <div class="col-sm-12">
-<input type="textarea" class="form-control" id="description" name="description" placeholder="Enter Description" required="">
+<textarea class="form-control" id="description" name="description" placeholder="Enter Description" rows="3" required="">
+</textarea>
 </div>
 </div>
 <div class="col-md-12">
@@ -226,6 +228,10 @@ $("#btn-save"). attr("disabled", false);
 alert('Room has been created successfully');
 },
 error: function(data){
+let error = data.responseJSON;
+$.each(error.errors, function (index, value) {
+    $('.errorMsgntainer').append('<span class="text-danger">'+value+'<span>'+'<br>');
+});
 console.log(data);
 }
 });

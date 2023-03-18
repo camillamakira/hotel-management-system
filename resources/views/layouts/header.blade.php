@@ -1,5 +1,5 @@
 <header class="header-section">
-        <div class="top-nav">
+        <!-- <div class="top-nav">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-6">
@@ -25,7 +25,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
         <div class="menu-item">
             <div class="container">
                 <div class="row">
@@ -52,7 +52,9 @@
                             @auth
                             <a href="{{url('/home')}}">Account</a>
                             @else
-                                <a href="{{route('login')}}">Login</a>
+                            <a href="{{route('register')}}">Sign Up</a>
+                            <span></span>
+                            <a href="{{route('login')}}">Login</a>
                             @endauth
                             @endif
                             </div>
