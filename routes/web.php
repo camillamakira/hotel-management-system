@@ -6,6 +6,7 @@ use App\Http\Controllers\RoomController;
 use App\Http\Controllers\RecreationController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\PagesController;
+use App\Http\Controllers\AboutController;
 
 /*
 |--------------------------------------------------------------------------
@@ -58,3 +59,9 @@ Route::get('user-datatable', [UserController::class, 'index']);
 Route::post('store-user', [UserController::class, 'store']);
 Route::post('edit-user', [UserController::class, 'edit']);
 Route::post('delete-user', [UserController::class, 'destroy']);
+
+//about
+Route::get('about-datatable', [AboutController::class, 'index']);
+Route::post('store-about', [AboutController::class, 'store']);
+Route::post('edit-about', [AboutController::class, 'edit']);
+Route::post('delete-about', [AboutController::class, 'destroy']);
