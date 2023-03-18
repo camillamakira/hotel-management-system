@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Food;
 use App\Models\Room;
+use App\Models\Recreation;
 
 class PagesController extends Controller
 {
@@ -20,6 +21,7 @@ class PagesController extends Controller
         return view('pages.foods', compact('foods'));                 
     }
     public function recreation(){
-        return view('pages.recreation');                 
+        $recreations =Recreation::paginate(6);
+        return view('pages.recreation',compact('recreations'));                 
     }
 }

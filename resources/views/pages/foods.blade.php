@@ -28,27 +28,23 @@
                 @foreach ($foods as $food)
                 <div class="col-lg-4 col-md-6">
                     <div class="room-item">
-                        <img src="{{url('images/$food->photo')}}" alt="">
+                        <img src="{{Storage::url($food->photo)}}" alt="">
                         <div class="ri-text">
-                            <h4>Premium King Room</h4>
-                            <h3>159$<span>/Pernight</span></h3>
+                            <h4>{{$food->name}}</h4>
+                            <h3>{{$food->price}}ksh<span>/Perplate</span></h3>
                             <table>
                                 <tbody>
                                     <tr>
                                         <td class="r-o">Size:</td>
-                                        <td>30 ft</td>
+                                        <td>{{$food->size}}</td>
                                     </tr>
                                     <tr>
-                                        <td class="r-o">Capacity:</td>
-                                        <td>Max persion 3</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="r-o">Bed:</td>
-                                        <td>King Beds</td>
+                                        <td class="r-o">Quantity:</td>
+                                        <td>Max persion {{$food->quantity}}</td>
                                     </tr>
                                     <tr>
                                         <td class="r-o">Services:</td>
-                                        <td>Wifi, Television, Bathroom,...</td>
+                                        <td>{{$food->services}}</td>
                                     </tr>
                                 </tbody>
                             </table>
