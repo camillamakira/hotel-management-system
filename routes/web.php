@@ -7,6 +7,7 @@ use App\Http\Controllers\RecreationController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\PagesController;
 use App\Http\Controllers\AboutController;
+use App\Http\Controllers\ServiceController;
 
 /*
 |--------------------------------------------------------------------------
@@ -65,3 +66,9 @@ Route::get('about-datatable', [AboutController::class, 'index']);
 Route::post('store-about', [AboutController::class, 'store']);
 Route::post('edit-about', [AboutController::class, 'edit']);
 Route::post('delete-about', [AboutController::class, 'destroy']);
+
+//service
+Route::get('service-datatable', [ServiceController::class, 'index']);
+Route::post('store-service', [ServiceController::class, 'store']);
+Route::post('edit-service', [ServiceController::class, 'edit']);
+Route::post('delete-service', [ServiceController::class, 'destroy']);
