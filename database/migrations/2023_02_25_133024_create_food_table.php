@@ -15,7 +15,11 @@ return new class extends Migration
             $table->increments('id');
             $table->string('name');
             $table->string('photo')->nullable();
-            $table->integer('price');
+            $table->float('price')->nullable();
+            $table->string('size')->nullable();
+            $table->integer('quantity')->nullable();
+            $table->string('services')->nullable();
+            $table->longText('description')->nullable();
             $table->timestamps();
         });
     }

@@ -3,20 +3,20 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Food;
+use App\Models\Room;
 
-class FoodController extends Controller
+class RoomController extends Controller
 {
     public function index()
     {
         if(request()->ajax()) {
-            return datatables()->of(Food::select('*'))
-            ->addColumn('action', 'foods.food-action')
+            return datatables()->of(Room::select('*'))
+            ->addColumn('action', 'rooms.room-action')
             ->rawColumns(['action'])
             ->addIndexColumn()
             ->make(true);
         }
-        return view('foods.food');
+        return view('rooms.room');
     }
       
       
@@ -49,23 +49,24 @@ class FoodController extends Controller
         
                     }
                 }    
-                $foodId = $request->id;
+                $roomId = $request->id;
         
-                $food   =   Food::updateOrCreate(
+                $room   =   Room::updateOrCreate(
                             [
-                            'id' => $foodId
+                            'id' => $roomId
                             ],
                             [
                             'name' => $request->name, 
                             'price' => $request->price, 
                             'photo' => $path,
                             'size' => $request->size,
-                            'quantity' => $request->quantity,
+                            'capacity' => $request->capacity,
+                            'bed' => $request->bed,
                             'services' => $request->services,
-                            'description' => $request->description   
+                            'description' => $request->description
                             ]);    
                                 
-                return Response()->json($food);
+                return Response()->json($room);
     
             }  
             else{
@@ -84,9 +85,9 @@ class FoodController extends Controller
     public function edit(Request $request)
     {   
         $where = array('id' => $request->id);
-        $food = Food::where($where)->first();
+        $room = Room::where($where)->first();
       
-        return Response()->json($food);
+        return Response()->json($room);
     }
       
       
@@ -98,8 +99,8 @@ class FoodController extends Controller
      */
     public function destroy(Request $request)
     {
-        $food= Food::where('id',$request->id)->delete();
+        $room= Room::where('id',$request->id)->delete();
       
-        return Response()->json($food);
+        return Response()->json($room);
     }
 }

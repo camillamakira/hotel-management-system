@@ -2,6 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FoodController;
+use App\Http\Controllers\RoomController;
+use App\Http\Controllers\RecreationController;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\PagesController;
 
 /*
@@ -19,6 +22,11 @@ Route::get('/', function () {
     return view('index');
 });
 
+Route::get('about', [PagesController::class, 'about']);
+Route::get('rooms', [PagesController::class, 'rooms']);
+Route::get('foods', [PagesController::class, 'foods']);
+Route::get('recreation', [PagesController::class, 'recreation']);
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
@@ -27,13 +35,26 @@ Route::get('admin_dashboard', [App\Http\Controllers\Admin\AdminController::class
 Route::get('manager_dashboard', [App\Http\Controllers\Manager\ManagerController::class, 'index'])->middleware('role:manager');
 Route::get('user_dashboard', [App\Http\Controllers\User\UserController::class, 'index'])->middleware('role:user');
 
- 
+ //food
 Route::get('food-datatable', [FoodController::class, 'index']);
 Route::post('store-food', [FoodController::class, 'store']);
 Route::post('edit-food', [FoodController::class, 'edit']);
 Route::post('delete-food', [FoodController::class, 'destroy']);
 
-Route::get('about', [PagesController::class, 'about']);
-Route::get('rooms', [PagesController::class, 'rooms']);
-Route::get('foods', [PagesController::class, 'foods']);
-Route::get('recreation', [PagesController::class, 'recreation']);
+//room
+Route::get('room-datatable', [RoomController::class, 'index']);
+Route::post('store-room', [RoomController::class, 'store']);
+Route::post('edit-room', [RoomController::class, 'edit']);
+Route::post('delete-room', [RoomController::class, 'destroy']);
+
+//recreation
+Route::get('recreation-datatable', [RecreationController::class, 'index']);
+Route::post('store-recreation', [RecreationController::class, 'store']);
+Route::post('edit-recreation', [RecreationController::class, 'edit']);
+Route::post('delete-recreation', [RecreationController::class, 'destroy']);
+
+//user
+Route::get('user-datatable', [UserController::class, 'index']);
+Route::post('store-user', [UserController::class, 'store']);
+Route::post('edit-user', [UserController::class, 'edit']);
+Route::post('delete-user', [UserController::class, 'destroy']);

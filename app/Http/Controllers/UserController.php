@@ -3,20 +3,21 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Food;
+use App\Models\User;
+use Illuminate\Support\Facades\Hash;
 
-class FoodController extends Controller
+class UserController extends Controller
 {
     public function index()
     {
         if(request()->ajax()) {
-            return datatables()->of(Food::select('*'))
-            ->addColumn('action', 'foods.food-action')
+            return datatables()->of(User::select('*'))
+            ->addColumn('action', 'users.user-action')
             ->rawColumns(['action'])
             ->addIndexColumn()
             ->make(true);
         }
-        return view('foods.food');
+        return view('users.user');
     }
       
       
@@ -49,23 +50,23 @@ class FoodController extends Controller
         
                     }
                 }    
-                $foodId = $request->id;
+                $userId = $request->id;
         
-                $food   =   Food::updateOrCreate(
+                $user   =   User::updateOrCreate(
                             [
-                            'id' => $foodId
+                            'id' => $userId
                             ],
                             [
-                            'name' => $request->name, 
-                            'price' => $request->price, 
+                            'first_name' => $request->first_name, 
+                            'last_name' => $request->last_name, 
+                            'email' => $request->email,
+                            'role' => $request->role,
+                            'phone_no' => $request->phone_no,
                             'photo' => $path,
-                            'size' => $request->size,
-                            'quantity' => $request->quantity,
-                            'services' => $request->services,
-                            'description' => $request->description   
+                            'password' => Hash::make('golfhotel2023')
                             ]);    
                                 
-                return Response()->json($food);
+                return Response()->json($user);
     
             }  
             else{
@@ -84,9 +85,9 @@ class FoodController extends Controller
     public function edit(Request $request)
     {   
         $where = array('id' => $request->id);
-        $food = Food::where($where)->first();
+        $user = User::where($where)->first();
       
-        return Response()->json($food);
+        return Response()->json($user);
     }
       
       
@@ -98,8 +99,8 @@ class FoodController extends Controller
      */
     public function destroy(Request $request)
     {
-        $food= Food::where('id',$request->id)->delete();
+        $user= User::where('id',$request->id)->delete();
       
-        return Response()->json($food);
+        return Response()->json($user);
     }
 }

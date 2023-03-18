@@ -50,7 +50,7 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a href="{{url('room-datatable')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Rooms</p>
                 </a>
@@ -74,7 +74,7 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a href="{{url('recreation-datatable')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Facilities</p>
                 </a>
@@ -97,7 +97,7 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a href="{{url('user-datatable')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>All Users</p>
                 </a>
@@ -117,7 +117,7 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a href="{{url('food-datatable')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Foods</p>
                 </a>
@@ -140,7 +140,7 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a href="{{url('room-datatable')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Rooms</p>
                 </a>
@@ -164,7 +164,7 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a href="{{url('recreation-datatable')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Facilities</p>
                 </a>

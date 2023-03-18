@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Food extends Model
+class Room extends Model
 {
     use HasFactory;
 
@@ -14,8 +14,10 @@ class Food extends Model
         'photo',
         'price',
         'size',
-        'quantity',
+        'capacity',
+        'bed',
         'services',
         'description'
     ];
+
 }

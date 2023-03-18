@@ -3,20 +3,20 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Food;
+use App\Models\Recreation;
 
-class FoodController extends Controller
+class RecreationController extends Controller
 {
     public function index()
     {
         if(request()->ajax()) {
-            return datatables()->of(Food::select('*'))
-            ->addColumn('action', 'foods.food-action')
+            return datatables()->of(Recreation::select('*'))
+            ->addColumn('action', 'recreations.recreation-action')
             ->rawColumns(['action'])
             ->addIndexColumn()
             ->make(true);
         }
-        return view('foods.food');
+        return view('recreations.recreation');
     }
       
       
@@ -49,23 +49,23 @@ class FoodController extends Controller
         
                     }
                 }    
-                $foodId = $request->id;
+                $recreationId = $request->id;
         
-                $food   =   Food::updateOrCreate(
+                $recreation   =   Recreation::updateOrCreate(
                             [
-                            'id' => $foodId
+                            'id' => $recreationId
                             ],
                             [
                             'name' => $request->name, 
                             'price' => $request->price, 
                             'photo' => $path,
                             'size' => $request->size,
-                            'quantity' => $request->quantity,
+                            'capacity' => $request->capacity,
                             'services' => $request->services,
-                            'description' => $request->description   
+                            'description' => $request->description
                             ]);    
                                 
-                return Response()->json($food);
+                return Response()->json($recreation);
     
             }  
             else{
@@ -84,9 +84,9 @@ class FoodController extends Controller
     public function edit(Request $request)
     {   
         $where = array('id' => $request->id);
-        $food = Food::where($where)->first();
+        $recreation = Recreation::where($where)->first();
       
-        return Response()->json($food);
+        return Response()->json($recreation);
     }
       
       
@@ -98,8 +98,8 @@ class FoodController extends Controller
      */
     public function destroy(Request $request)
     {
-        $food= Food::where('id',$request->id)->delete();
+        $recreation= Recreation::where('id',$request->id)->delete();
       
-        return Response()->json($food);
+        return Response()->json($recreation);
     }
 }
