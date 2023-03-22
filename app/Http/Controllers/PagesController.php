@@ -11,25 +11,33 @@ use App\Models\Recreation;
 
 class PagesController extends Controller
 {
+
+    public function index(){
+        $abouts = About::all();
+        $services = Service::latest()->take(6)->get();
+        $rooms = Room::latest()->take(4)->get();
+        return view('index',compact('abouts','services','rooms'));
+    }
+
     public function about(){
         $abouts = About::all();
         $services = Service::latest()->take(5)->get();
-        return view('pages.about',compact('abouts','services'));                 
+        return view('pages.about',compact('abouts','services'));
     }
 
     public function rooms(){
         $rooms =Room::paginate(6);
-        return view('pages.rooms',compact('rooms'));                 
+        return view('pages.rooms',compact('rooms'));
     }
 
     public function foods(){
         $foods = Food::all();
-        return view('pages.foods', compact('foods'));                 
+        return view('pages.foods', compact('foods'));
     }
 
     public function recreation(){
         $recreations =Recreation::paginate(6);
-        return view('pages.recreation',compact('recreations'));                 
+        return view('pages.recreation',compact('recreations'));
     }
 
     public function singleRoom($id)

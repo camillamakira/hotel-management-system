@@ -1,5 +1,5 @@
 <footer class="footer-section">
-        <div class="container">
+        <!-- <div class="container">
             <div class="footer-text">
                 <div class="row">
                     <div class="col-lg-4">
@@ -41,7 +41,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
         <div class="copyright-option">
             <div class="container">
                 <div class="row">

@@ -67,7 +67,7 @@
                             <p class="f-para"> {!! nl2br(e($singleroom->description), false) !!}</p>
                         </div>
                     </div>
-                    <div class="rd-reviews">
+                    <!-- <div class="rd-reviews">
                         <h4>Reviews</h4>
                         <div class="review-item">
                             <div class="ri-pic">
@@ -134,7 +134,7 @@
                                 </div>
                             </div>
                         </form>
-                    </div>
+                    </div> -->
                 </div>
                 <div class="col-lg-4">
                     <div class="room-booking">

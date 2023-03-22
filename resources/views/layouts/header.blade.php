@@ -19,7 +19,7 @@
                             <a href="#" class="bk-btn">Booking Now</a>
                             <div class="language-option">
                                 <img src="img/flag.jpg" alt="">
-                                </div> 
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -31,7 +31,7 @@
                 <div class="row">
                     <div class="col-lg-2">
                         <div class="logo">
-                            <a href="./index.html">
+                            <a href="/">
                                 <img src="img/golf.png" alt="">
                             </a>
                         </div>

@@ -20,10 +20,8 @@ use App\Http\Controllers\ServiceController;
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
 
+Route::get('/', [PagesController::class, 'index']);
 Route::get('about', [PagesController::class, 'about']);
 Route::get('rooms', [PagesController::class, 'rooms']);
 Route::get('foods', [PagesController::class, 'foods']);
