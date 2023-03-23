@@ -95,4 +95,4 @@ Route::get('recreationorder-datatable', [RecreationOrderController::class, 'inde
 //user orders
 Route::get('myfoodorder-datatable', [FoodOrderController::class, 'myOrder']);
 Route::get('myroomorder-datatable', [RoomOrderController::class, 'myOrder']);
-Route::get('myrecreationorder-datatable', [FoodOrderController::class, 'myOrder']);
+Route::get('myrecreationorder-datatable', [RecreationOrderController::class, 'myOrder']);
