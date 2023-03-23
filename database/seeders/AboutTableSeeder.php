@@ -15,7 +15,7 @@ class AboutTableSeeder extends Seeder
     {
         About::create([
             'title' => 'Welcome To Golf Hotel.',
-            'history' => 'Built in 1990 during the Belle Epoque period, this hotel is located in the center of Paris, with easy access to the city’s tourist attractions. It offers tastefully decorated rooms.'
+            'history' => 'Golf Hotel was built in 2020 during the Covid-19 period, this hotel is located in the center of   Kakamega town in Kenya, with easy access to the couty;stourist attractions. It offers tastefully decorated rooms, delicious meals and great services'
         ]);
     }
 }

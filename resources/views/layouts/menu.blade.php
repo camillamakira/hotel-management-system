@@ -5,10 +5,10 @@
           <li class="nav-item">
             @if (Auth::user()->role == 'admin')
             <a href="{{url('admin_dashboard')}}" class="nav-link">
-            @elseif (Auth::user()->role == 'manager') 
+            @elseif (Auth::user()->role == 'manager')
             <a href="{{url('manager_dashboard')}}" class="nav-link">
             @else
-            <a href="{{url('user_dashboard')}}" class="nav-link">             
+            <a href="{{url('user_dashboard')}}" class="nav-link">
             @endif
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
@@ -126,7 +126,7 @@
                 </a>
               </li>
             </ul>
-          </li>            
+          </li>
           @endcan
 
           @can('isManager')
@@ -146,7 +146,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a href="{{url('foodorder-datatable')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Food Orders</p>
                 </a>
@@ -169,7 +169,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a href="{{url('roomorder-datatable')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Room Orders</p>
                 </a>
@@ -199,7 +199,7 @@
                 </a>
               </li>
             </ul>
-          </li>            
+          </li>
           @endcan
 
           @can('isUser')
@@ -208,19 +208,19 @@
               <i class="fas fa-th nav-icon"></i>
               <p>My Food Orders</p>
             </a>
-          </li>  
+          </li>
           <li class="nav-item">
             <a href="{{url('myroomorder-datatable')}}" class="nav-link">
               <i class="fas fa-th nav-icon"></i>
               <p>My Room Orders</p>
             </a>
-          </li> 
+          </li>
           <li class="nav-item">
             <a href="{{url('myrecreationorder-datatable')}}" class="nav-link">
               <i class="fas fa-th nav-icon"></i>
               <p>My Recreation Orders</p>
             </a>
-          </li>         
+          </li>
           @endcan
 
 
