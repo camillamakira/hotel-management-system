@@ -1,67 +1,124 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+<!-- PROJECT SHIELDS -->
+<!--
+*** I'm using markdown "reference style" links for readability.
+*** Reference links are enclosed in brackets [ ] instead of parentheses ( ).
+*** See the bottom of this document for the declaration of the reference variables
+*** for contributors-url, forks-url, etc. This is an optional, concise syntax you may use.
+*** https://www.markdownguide.org/basic-syntax/#reference-style-links
+-->
+[![Contributors][contributors-shield]][contributors-url]
+[![Forks][forks-shield]][forks-url]
+[![Stargazers][stars-shield]][stars-url]
+[![Issues][issues-shield]][issues-url]
+[![MIT License][license-shield]][license-url]
+[![LinkedIn][linkedin-shield]][linkedin-url]
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+<!-- PROJECT LOGO -->
+<br />
+<div align="center">
+  <a href="https://github.com/camillamakira/hotel-management-system">
+<!--     <img src="images/logo.png" alt="Logo" width="80" height="80"> -->
+  </a>
 
-## About Laravel
+  <h3 align="center"> Hotel Management System</h3>
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+  <p align="center">
+    a simple management system application to allow hotel owners, managers and clients to interact with the hotel features: mainly food, rooms and recreation facilities
+    <br />
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+  </p>
+</div>
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+<!-- ABOUT THE PROJECT -->
+## About The Project
+Here’s what your completed application will look like:
 
-## Learning Laravel
+Homepage
+![Screenshot_select-area_20230323033247](https://user-images.githubusercontent.com/34887895/227069140-544a5a05-efc3-4dd3-ad10-914f39870eed.png)
+Admin Dashboard
+![Screenshot_select-area_20230323033455](https://user-images.githubusercontent.com/34887895/227069179-2d3535cd-d71f-4659-ad07-03e5f3aae242.png)
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+<p align="right">(<a href="#top">back to top</a>)</p>
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+<!-- GETTING STARTED -->
+## Getting Started
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+To get a local copy up and running follow these simple example steps.
 
-## Laravel Sponsors
+## Requirements
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+The current package requirements are:
 
-### Premium Partners
+- Laravel >= 14.21.x
+- PHP >= 8.2
+- Node JS >=10.0
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+### Installation
 
-## Contributing
+_Below is an example of how you can instruct your audience on installing and setting up your app. This template doesn't rely on any external dependencies or services._
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+1. Get a free API Key at [https://github.com](https://github.com)
+2. Clone the repo
+   ```sh
+   git clone https://github.com/camillamakira/hotel-management-system.git
+   ```
+3. Install composer dependencies
+   ```sh
+   composer install --ignore-platform-reqs
+   ```
+3. Alternatively, update composer dependencies
+   ```sh
+   composer update
+   ```
+4. Install NPM packages
+   ```sh
+   npm install
+   ```
+5. Run this command
+   ```sh
+   cp .env.example .env
+   ```
 
-## Code of Conduct
+6. Run each of these commands 
+   ```sh
+   php artisan key:generate
+   ```
+   ```sh
+   php artisan migrate
+   ```
+   ```sh
+   php artisan db:seed
+   ```   
+7. Finally
+   ```sh
+   php artisan serve
+   ```  
+8. Login credentials (admin)
+    admin@admin.com
+    12345  
+<p align="right">(<a href="#top">back to top</a>)</p>
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+<!-- CONTACT -->
+## Contact
 
-## Security Vulnerabilities
+<!-- Your Name - [@your_twitter](https://twitter.com/markmosobo) - email@example.com
+ -->
+Project Link: [https://github.com/camillamakira/hotel-management-system/](https://github.com/camillamakira/hotel-management-system/)
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+<p align="right">(<a href="#top">back to top</a>)</p>
 
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
-# hotel-management-system
+<!-- MARKDOWN LINKS & IMAGES -->
+<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
+[contributors-shield]: https://img.shields.io/github/contributors/camillamakira/hotel-management-system.svg?style=for-the-badge
+[contributors-url]: https://github.com/camillamakira/hotel-management-system/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/camillamakira/hotel-management-system.svg?style=for-the-badge
+[forks-url]: https://github.com/camillamakira/hotel-management-system/network/members
+[stars-shield]: https://img.shields.io/github/stars/camillamakira/hotel-management-system.svg?style=for-the-badge
+[stars-url]: https://github.com/camillamakira/hotel-management-system/stargazers
+[issues-shield]: https://img.shields.io/github/issues/camillamakira/hotel-management-system.svg?style=for-the-badge
+[issues-url]: https://github.com/camillamakira/hotel-management-system/issues
+[license-shield]: https://img.shields.io/github/license/camillamakira/hotel-management-system.svg?style=for-the-badge
+[license-url]: https://github.com/camillamakira/hotel-management-system/LICENSE.txt
+[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
+[linkedin-url]: https://linkedin.com/in/mark-mosobo
+[product-screenshot]: images/screenshot.png
