@@ -34,16 +34,27 @@
                                 <h3>{{$singleroom->name}}</h3>
                                 <div class="rdt-right">
                                     <div class="rating">
+                                        <!-- <i class="icon_star"></i>
                                         <i class="icon_star"></i>
                                         <i class="icon_star"></i>
                                         <i class="icon_star"></i>
-                                        <i class="icon_star"></i>
-                                        <i class="icon_star-half_alt"></i>
+                                        <i class="icon_star-half_alt"></i> -->
                                     </div>
-                                    <a href="#">Book Now</a>
+                                    @guest
+                                    <a href="{{url('guest-bookroom')}}">Book Now</a>
+                                    @else
+                                    <a href="{{route('auth.bookroom')}}" onclick="event.preventDefault();
+                                            document.getElementById('book-form').submit();">Book Now
+                                    </a>
+
+                                    <form id="book-form" action="{{ route('auth.bookroom') }}" method="POST" class="d-none">
+                                        @csrf
+                                        <input type="hidden" name="room_id" value="{{$singleroom->id}}">
+                                    </form>
+                                    @endguest
                                 </div>
                             </div>
-                            <h2>{{$singleroom->price}}KSH<span>/Pernight</span></h2>
+                            <h2>{{$singleroom->price}}KSH<span>/PerNight</span></h2>
                             <table>
                                 <tbody>
                                     <tr>

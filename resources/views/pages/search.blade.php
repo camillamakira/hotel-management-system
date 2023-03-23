@@ -1,6 +1,6 @@
 @extends('layouts.main')
 
-@section('title','Our Rooms')
+@section('title','Search Results')
 
 @section('content')
     <!-- Breadcrumb Section Begin -->
@@ -20,9 +20,7 @@
         </div>
     </div>
     <!-- Breadcrumb Section End -->
-    @if(Session::has('successMsg'))
-        <div class="alert alert-success"> {{ Session::get('successMsg') }}</div>
-    @endif
+
     <!-- Rooms Section Begin -->
     <section class="rooms-section spad">
         <div class="container">
@@ -33,7 +31,7 @@
                         <img src="{{Storage::url($room->photo)}}" alt="">
                         <div class="ri-text">
                             <h4>{{$room->name}}</h4>
-                            <h3>{{$room->price}}KSH<span>/PerNight</span></h3>
+                            <h3>{{$room->price}}KSH<span>/Pernight</span></h3>
                             <table>
                                 <tbody>
                                     <tr>

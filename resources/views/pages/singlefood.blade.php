@@ -34,16 +34,27 @@
                                 <h3>{{$singlefood->name}}</h3>
                                 <div class="rdt-right">
                                     <div class="rating">
+                                        <!-- <i class="icon_star"></i>
                                         <i class="icon_star"></i>
                                         <i class="icon_star"></i>
                                         <i class="icon_star"></i>
-                                        <i class="icon_star"></i>
-                                        <i class="icon_star-half_alt"></i>
+                                        <i class="icon_star-half_alt"></i> -->
                                     </div>
-                                    <a href="#">Book Now</a>
+                                    @guest
+                                    <a href="{{url('guest-bookfood')}}">Book Now</a>
+                                    @else
+                                    <a href="{{route('auth.bookfood')}}" onclick="event.preventDefault();
+                                            document.getElementById('book-form').submit();">Book Now
+                                    </a>
+
+                                    <form id="book-form" action="{{ route('auth.bookfood') }}" method="POST" class="d-none">
+                                        @csrf
+                                        <input type="hidden" name="food_id" value="{{$singlefood->id}}">
+                                    </form>
+                                    @endguest
                                 </div>
                             </div>
-                            <h2>{{$singlefood->price}}KSH<span>/Perplate</span></h2>
+                            <h2>{{$singlefood->price}}KSH<span>/PerPlate</span></h2>
                             <table>
                                 <tbody>
                                     <tr>

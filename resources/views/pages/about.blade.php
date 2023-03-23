@@ -11,7 +11,7 @@
                     <div class="breadcrumb-text">
                         <h2>@yield('title')</h2>
                         <div class="bt-option">
-                            <a href="./index.html">Home</a>
+                            <a href="/">Home</a>
                             <span>@yield('title')</span>
                         </div>
                     </div>
@@ -43,31 +43,7 @@
                     </div>
                 </div>
             </div>
-            <div class="about-page-services">
-                <div class="row">
-                    <div class="col-md-4">
-                        <div class="ap-service-item set-bg" data-setbg="img/about/about-p1.jpg">
-                            <div class="api-text">
-                                <h3>Restaurants Services</h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="ap-service-item set-bg" data-setbg="img/about/about-p2.jpg">
-                            <div class="api-text">
-                                <h3>Travel & Camping</h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="ap-service-item set-bg" data-setbg="img/about/about-p3.jpg">
-                            <div class="api-text">
-                                <h3>Event & Party</h3>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+
         </div>
     </section>
     <!-- About Us Page Section End -->

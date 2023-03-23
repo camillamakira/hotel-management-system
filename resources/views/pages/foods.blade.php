@@ -11,7 +11,7 @@
                     <div class="breadcrumb-text">
                         <h2>@yield('title')</h2>
                         <div class="bt-option">
-                            <a href="./home.html">Home</a>
+                            <a href="/">Home</a>
                             <span>@yield('title')</span>
                         </div>
                     </div>
@@ -20,7 +20,9 @@
         </div>
     </div>
     <!-- Breadcrumb Section End -->
-
+    @if(Session::has('successMsg'))
+        <div class="alert alert-success"> {{ Session::get('successMsg') }}</div>
+    @endif
     <!-- Rooms Section Begin -->
     <section class="rooms-section spad">
         <div class="container">
@@ -31,7 +33,7 @@
                         <img src="{{Storage::url($food->photo)}}" alt="">
                         <div class="ri-text">
                             <h4>{{$food->name}}</h4>
-                            <h3>{{$food->price}}ksh<span>/Perplate</span></h3>
+                            <h3>{{$food->price}}ksh<span>/PerPlate</span></h3>
                             <table>
                                 <tbody>
                                     <tr>
@@ -40,7 +42,7 @@
                                     </tr>
                                     <tr>
                                         <td class="r-o">Quantity:</td>
-                                        <td>Max persion {{$food->quantity}}</td>
+                                        <td>Max person {{$food->quantity}}</td>
                                     </tr>
                                     <tr>
                                         <td class="r-o">Services:</td>

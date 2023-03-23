@@ -56,7 +56,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a href="{{url('foodorder-datatable')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Food Orders</p>
                 </a>
@@ -79,7 +79,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a href="{{url('roomorder-datatable')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Room Orders</p>
                 </a>
@@ -103,7 +103,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a href="{{url('recreationorder-datatable')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Facility Orders</p>
                 </a>
@@ -204,19 +204,19 @@
 
           @can('isUser')
           <li class="nav-item">
-            <a href="#" class="nav-link">
+            <a href="{{url('myfoodorder-datatable')}}" class="nav-link">
               <i class="fas fa-th nav-icon"></i>
               <p>My Food Orders</p>
             </a>
           </li>  
           <li class="nav-item">
-            <a href="#" class="nav-link">
+            <a href="{{url('myroomorder-datatable')}}" class="nav-link">
               <i class="fas fa-th nav-icon"></i>
               <p>My Room Orders</p>
             </a>
           </li> 
           <li class="nav-item">
-            <a href="#" class="nav-link">
+            <a href="{{url('myrecreationorder-datatable')}}" class="nav-link">
               <i class="fas fa-th nav-icon"></i>
               <p>My Recreation Orders</p>
             </a>
